@@ -73,8 +73,8 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: stretch;
-  flex-grow: 1; /* Prend tout l'espace disponible dans le container */
+  align-items: start; /* Changé de stretch à start */
+  flex-grow: 1;
 }
 
 /* Ajustement des hauteurs pour remplir l'espace */
@@ -84,12 +84,11 @@ main {
 }
 
 .info-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   width: 100%;
-  height: 100%;
+  height: auto; /* Changé de 100% à auto */
   min-height: 150px;
 }
 
@@ -344,10 +343,6 @@ footer .footer-content p {
   .map-clip-mask {
     height: 450px;
   }
-  
-  .info-grid {
-    max-height: 450px;
-  }
 }
 
 @media (max-width: 992px) {
@@ -361,16 +356,17 @@ footer .footer-content p {
   }
   
   .info-grid {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    height: auto;
+    margin-bottom: 3rem;
   }
 }
 
 @media (max-width: 768px) {
   .info-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -384,5 +380,16 @@ footer .footer-content p {
     transform: translateX(-50%);
     bottom: 10px;
     max-width: 90%;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .info-card {
+    width: 100%;
+    margin-bottom: 0;
   }
 } 
