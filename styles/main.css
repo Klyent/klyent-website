@@ -35,7 +35,7 @@
     --dark-fg: var(--color-white);
     --dark-accent: var(--color-neon);
     --dark-surface: var(--color-gray-900);
-    --dark-surface-alt: var(--color-gray-800);
+    --dark-surface-alt: var(--color-gray-600);
     --dark-border: var(--color-gray-700);
     --dark-muted: var(--color-gray-400);
     
@@ -453,13 +453,13 @@
   
   /* === HERO SECTION === */
   .hero {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
     position: relative;
     overflow: hidden;
     background-color: var(--bg-color);
     display: flex;
     align-items: center;
-    min-height: 80vh;
+    /*min-height: 80vh;*/
     border-bottom: var(--border-width) solid var(--border-color);
   }
   
@@ -1317,22 +1317,11 @@
 
   /* === SECTION ILS NOUS ONT FAIT CONFIANCE (NOUVEAU DESIGN SOBRE) === */
   .trusted-by {
-    background: var(--surface-alt-color) !important;
+    background: var(--surface-alt-color) !important ;
     padding: var(--space-lg) 0 var(--space-md) 0;
     border-bottom: var(--border-width) solid var(--border-color);
   }
-  .trusted-by .section-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-  .trusted-title {
-    font-size: 2.1rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    color: var(--fg-color);
-  }
+
   .trusted-logos-flex {
     display: flex;
     flex-wrap: wrap;
@@ -1358,18 +1347,14 @@
     background: linear-gradient(120deg, var(--surface-color) 60%, var(--accent-color) 120%);
     transform: translateY(-4px) scale(1.06);
   }
+
   .trusted-logo-img {
     width: 70px;
     height: 70px;
     object-fit: contain;
-    filter: grayscale(0.2) brightness(1.05) contrast(1.1);
-    transition: filter 0.3s, transform 0.3s;
     user-select: none;
   }
-  .trusted-logo-card:hover .trusted-logo-img {
-    filter: none;
-    transform: scale(1.08);
-  }
+
   @media (max-width: 992px) {
     .trusted-logos-flex {
       gap: 1.5rem 1.5rem;
@@ -1410,9 +1395,6 @@
     width: 220px;
     height: 120px;
     object-fit: contain;
-    filter: grayscale(1) brightness(0.15) invert(0) opacity(0.7);
-    transition: filter 0.35s, opacity 0.35s;
-    opacity: 0.85;
     background: none;
     box-shadow: none;
     border: none;
@@ -1427,6 +1409,7 @@
     outline: none;
     border: none;
   }
+
   @media (max-width: 992px) {
     .trusted-logos-premium {
       grid-template-columns: repeat(3, 1fr);
@@ -1446,7 +1429,4 @@
       width: 90px;
       height: 50px;
     }
-  }
-  [data-theme="dark"] .trusted-logo-img.premium {
-    filter: grayscale(1) brightness(2.2) invert(1) opacity(0.7);
   }
